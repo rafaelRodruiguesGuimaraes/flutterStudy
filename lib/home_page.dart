@@ -22,9 +22,7 @@ class HomePageStates extends State<HomePage> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
           children: [
             Text('contador: $counter'),
             Container(
@@ -48,12 +46,14 @@ class HomePageStates extends State<HomePage> {
                     height: 50,
                     color: Colors.black,
                   ),
-                  Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.black,
-                  )
-                ])
+                ]),
+            Container(height: 15),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/');
+              },
+              child: Text('Voltar'),
+            )
           ],
         ),
       ),

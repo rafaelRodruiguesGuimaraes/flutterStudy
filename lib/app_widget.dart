@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:laricel/app_controller.dart';
 
 import 'home_page.dart';
+import 'login_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -11,11 +12,15 @@ class AppWidget extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
               theme: ThemeData(
-                  primarySwatch: Colors.red,
+                  primarySwatch: Colors.blue,
                   brightness: AppController.instance.isDarkTheme
                       ? Brightness.dark
                       : Brightness.light),
-              home: HomePage());
+              initialRoute: '/',
+              routes: {
+                '/': (context) => LoginPage(),
+                '/home': (context) => HomePage(),
+              });
         });
   }
 }
